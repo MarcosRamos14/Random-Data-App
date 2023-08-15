@@ -1,11 +1,28 @@
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.kotlinAndroid)
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
+
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
     namespace 'com.example.randomdataapp'
     compileSdk 33
+
+    signingConfigs {
+        release {
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+        }
+    }
 
     defaultConfig {
         applicationId "com.example.randomdataapp"
@@ -18,27 +35,80 @@ android {
     }
 
     buildTypes {
+        debug {
+            applicationIdSuffix '.debug'
+            debuggable true
+        }
         release {
-            minifyEnabled false
+            signingConfig signingConfigs.release
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
+    }
+    buildFeatures {
+        viewBinding true
     }
 }
 
 dependencies {
 
-    implementation libs.core.ktx
-    implementation libs.appcompat
-    implementation libs.material
-    implementation libs.constraintlayout
-    testImplementation libs.junit
-    androidTestImplementation libs.androidx.test.ext.junit
-    androidTestImplementation libs.espresso.core
+    // AndroidX
+    implementation "androidx.core:core-ktx:$android_core_ktx"
+    implementation "androidx.appcompat:appcompat:$android_appcompat"
+    implementation "androidx.constraintlayout:constraintlayout:$android_constraint_layout"
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$jetbrains_kotlin_coroutines"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$jetbrains_kotlin_coroutines"
+
+    // Dagger Hilt
+    implementation "com.google.dagger:hilt-android:$android_dagger_hilt"
+    kapt "com.google.dagger:hilt-android-compiler:$android_dagger_hilt"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$github_glide"
+    kapt "com.github.bumptech.glide:compiler:$github_glide"
+
+    // Gson
+    implementation "com.google.code.gson:gson:$google_gson"
+
+    // Javax Inject
+    implementation "javax.inject:javax.inject:1"
+
+    // Lifecycle
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$android_lifecycle"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$android_lifecycle"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$android_lifecycle"
+
+    // Material design
+    implementation "com.google.android.material:material:$google_material_design"
+    implementation "androidx.legacy:legacy-support-v4:$android_legacy_support"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$android_navigation"
+    implementation "androidx.navigation:navigation-ui-ktx:$android_navigation"
+
+    // OkHttp
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:$squareup_ok_http"))
+    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:logging-interceptor")
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$squareup_retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$squareup_retrofit"
+
+    // Unit test
+    testImplementation "junit:junit:$test_junit"
+
+    // Instrumentation test
+    androidTestImplementation "androidx.test.ext:junit:$test_junit_ext"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$test_espresso"
 }
