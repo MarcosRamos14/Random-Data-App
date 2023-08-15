@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- DP -->
     <dimen name="match_constraints">0dp</dimen>
+    <dimen name="_8dp">8dp</dimen>
+    <dimen name="_16dp">16dp</dimen>
+    <dimen name="_140dp">140dp</dimen>
+
+    <!-- SP -->
+    <dimen name="_32sp">32sp</dimen>
 
 </resources>

@@ -111,4 +111,7 @@ dependencies {
     // Instrumentation test
     androidTestImplementation "androidx.test.ext:junit:$test_junit_ext"
     androidTestImplementation "androidx.test.espresso:espresso-core:$test_espresso"
+
+    // Others
+    implementation "com.facebook.shimmer:shimmer:$facebook_shimmer"
 }

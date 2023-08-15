@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">RandomDataApp</string>
+
+    <!-- Common -->
+    <string name="common_try_again">Try again</string>
+
+    <!-- Errors -->
+    <string name="error_loading_data">Error when trying to load data</string>
+
+    <!-- Tools -->
+    <string name="tools_user_name">User name</string>
+    <string name="tools_phone_number">+55 31 99999–9999</string>
+    <string name="tools_address_email">exemplo@gmail.com</string>
 </resources>
