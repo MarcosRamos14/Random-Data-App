@@ -14,6 +14,8 @@
     <string name="full_email_label">E-mail: %s</string>
     <string name="full_phone_number_label">Phone Number: %s</string>
     <string name="full_date_of_birth_label">Data of Birth: %s</string>
+    <string name="full_employment_title_label">Employment Title: %s</string>
+    <string name="full_employment_key_skill_label">Key Skill: %s</string>
 
     <!-- Errors -->
     <string name="error_loading_data">Error when trying to load data</string>
