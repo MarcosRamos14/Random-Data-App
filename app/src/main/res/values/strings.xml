@@ -10,6 +10,11 @@
     <!-- Details -->
     <string name="details_screen_title">Details</string>
 
+    <string name="full_name_label">Full Name: %s</string>
+    <string name="full_email_label">E-mail: %s</string>
+    <string name="full_phone_number_label">Phone Number: %s</string>
+    <string name="full_date_of_birth_label">Data of Birth: %s</string>
+
     <!-- Errors -->
     <string name="error_loading_data">Error when trying to load data</string>
     <string name="error_loading_image">Error loading image</string>
@@ -21,4 +26,10 @@
     <string name="tools_user_name">User name</string>
     <string name="tools_phone_number">+55 31 99999–9999</string>
     <string name="tools_address_email">exemplo@gmail.com</string>
+    <string name="tools_card_number">4469–4146–7687-5924</string>
+    <string name="tools_card_status">Active</string>
+    <string name="tools_card_plan">Standard</string>
+    <string name="tools_card_payment_method">WeChat Pay</string>
+    <string name="tools_card_term">Payment in advance</string>
+    <string name="tools_register_data">cherrie.murphy</string>
 </resources>

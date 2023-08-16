@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_200dp"
+    android:layout_margin="@dimen/_16dp"
+    android:background="@drawable/bg_card">
+
+    <ImageView
+        android:id="@+id/icon_master_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_28dp"
+        android:layout_marginTop="@dimen/_28dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_mastercard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/icon_master_right"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_28dp"
+        android:layout_marginEnd="@dimen/_28dp"
+        android:importantForAccessibility="no"
+        android:src="@drawable/ic_chip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/icon_master_left" />
+
+    <TextView
+        android:id="@+id/text_card_number"
+        android:layout_width="@dimen/match_constraints"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_24sp"
+        app:layout_constraintEnd_toEndOf="@+id/icon_master_right"
+        app:layout_constraintStart_toStartOf="@+id/icon_master_left"
+        app:layout_constraintTop_toBottomOf="@+id/icon_master_left"
+        tools:text="@string/tools_card_number" />
+
+    <TextView
+        android:id="@+id/text_card_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_16dp"
+        android:textColor="@color/medium_grey"
+        android:textSize="@dimen/_12sp"
+        app:layout_constraintStart_toStartOf="@+id/text_card_number"
+        app:layout_constraintTop_toBottomOf="@+id/text_card_number"
+        tools:text="@string/tools_card_status" />
+
+    <TextView
+        android:id="@+id/text_card_plan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sp"
+        app:layout_constraintStart_toStartOf="@+id/text_card_status"
+        app:layout_constraintTop_toBottomOf="@+id/text_card_status"
+        tools:text="@string/tools_card_plan" />
+
+    <TextView
+        android:id="@+id/text_card_term"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/medium_grey"
+        android:textSize="@dimen/_12sp"
+        app:layout_constraintEnd_toEndOf="@+id/text_card_number"
+        app:layout_constraintTop_toTopOf="@+id/text_card_status"
+        tools:text="@string/tools_card_term" />
+
+    <TextView
+        android:id="@+id/text_card_payment_method"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sp"
+        app:layout_constraintEnd_toEndOf="@+id/text_card_term"
+        app:layout_constraintTop_toBottomOf="@+id/text_card_term"
+        tools:text="@string/tools_card_payment_method" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
