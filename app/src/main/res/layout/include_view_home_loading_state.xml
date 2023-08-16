@@ -18,6 +18,10 @@
         <include layout="@layout/item_home_shimmer_layout"/>
         <include layout="@layout/item_home_shimmer_layout"/>
         <include layout="@layout/item_home_shimmer_layout"/>
+        <include layout="@layout/item_home_shimmer_layout"/>
+        <include layout="@layout/item_home_shimmer_layout"/>
+        <include layout="@layout/item_home_shimmer_layout"/>
+        <include layout="@layout/item_home_shimmer_layout"/>
 
     </LinearLayout>
 
