@@ -29,6 +29,7 @@
         android:ellipsize="end"
         android:maxLines="1"
         android:textStyle="bold"
+        android:textColor="@color/dark_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/image_item_home"
         app:layout_constraintTop_toTopOf="parent"
