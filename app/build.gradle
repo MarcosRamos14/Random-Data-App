@@ -116,4 +116,5 @@ dependencies {
 
     // Others
     implementation "com.facebook.shimmer:shimmer:$facebook_shimmer"
+    implementation "de.hdodenhof:circleimageview:$github_circleimageview"
 }
