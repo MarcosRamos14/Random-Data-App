@@ -8,13 +8,11 @@
     android:layout_margin="@dimen/_8dp"
     app:cardCornerRadius="@dimen/_16dp">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/image_item_home"
         android:layout_width="@dimen/_64dp"
         android:layout_height="@dimen/_64dp"
         android:background="@drawable/bg_rounded"
-        android:importantForAccessibility="no"
-        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

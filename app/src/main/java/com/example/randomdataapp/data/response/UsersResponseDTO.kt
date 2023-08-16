@@ -22,7 +22,8 @@ data class UsersResponseDTO(
     val dateOfBirth: String?,
     @SerializedName("credit_card")
     val creditCard: CreditCardResponseDTO?,
-    val subscription: SubscriptionResponseDTO?
+    val subscription: SubscriptionResponseDTO?,
+    val employment: EmploymentResponseDTO?
 )
 
 fun UsersResponseDTO.toUsersModel() : UsersDTO {
@@ -36,6 +37,7 @@ fun UsersResponseDTO.toUsersModel() : UsersDTO {
         phoneNumber = phoneNumber,
         dateOfBirth = dateOfBirth,
         creditCard = creditCard?.toCreditCardModel(),
-        subscription = subscription?.toSubscriptionModel()
+        subscription = subscription?.toSubscriptionModel(),
+        employment = employment?.toEmploymentModel()
     )
 }
