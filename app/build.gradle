@@ -32,6 +32,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "BASE_URL", '"https://random-data-api.com/api/v2/"'
     }
 
     buildTypes {
@@ -111,4 +113,7 @@ dependencies {
     // Instrumentation test
     androidTestImplementation "androidx.test.ext:junit:$test_junit_ext"
     androidTestImplementation "androidx.test.espresso:espresso-core:$test_espresso"
+
+    // Others
+    implementation "com.facebook.shimmer:shimmer:$facebook_shimmer"
 }
