@@ -14,5 +14,8 @@ data class UsersDTO(
     val phoneNumber: String?,
     val dateOfBirth: String?,
     val creditCard: CreditCardDTO?,
-    val subscription: SubscriptionDTO?
-) : Parcelable
+    val subscription: SubscriptionDTO?,
+    val employment: EmploymentDTO?
+) : Parcelable {
+    val fullName: String get() = "$firstName $lastName"
+}
